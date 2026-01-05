@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TikTok Authorization</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
+        .tiktok-logo { color: #000; font-size: 24px; font-weight: bold; margin-bottom: 20px; }
+        .auth-title { font-size: 18px; margin-bottom: 10px; }
+        .auth-desc { color: #666; margin-bottom: 20px; }
+        .app-info { background: #f5f5f5; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+        .app-name { font-weight: bold; }
+        .permissions { margin: 10px 0; }
+        .btn { display: block; width: 100%; padding: 12px; background: #000; color: white; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px; }
+        .btn:hover { background: #333; }
+    </style>
+</head>
+<body>
+    <div class="tiktok-logo">TikTok</div>
+    <div class="auth-title">Authorize Your App Name</div>
+    <div class="auth-desc">This app wants to access your TikTok account.</div>
+    
+    <div class="app-info">
+        <div class="app-name">Your App Name</div>
+        <div class="permissions">
+            <p>• Basic user information</p>
+        </div>
+    </div>
+
+    <!-- 点击按钮跳回你的回调页（模拟授权成功） -->
+    <button class="btn" onclick="redirectToCallback()">Authorize</button>
+
+    <script>
+        // 跳回你的回调页，模拟授权成功
+        function redirectToCallback() {
+            window.location.href = "https://jialechen03.github.io/callback.html?code=demo_auth_code_123&state=random123";
+        }
+    </script>
+</body>
+</html>
