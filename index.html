@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>TikTok授权演示 - JialeChen03</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 50px auto; text-align: center; }
+        button { padding: 15px 30px; font-size: 18px; background: #69C9D0; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #55BCC9; }
+    </style>
+</head>
+<body>
+    <h1>TikTok OAuth 2.0 授权演示</h1>
+    <p>点击下方按钮开始授权流程（演示用）</p>
+    <button onclick="startAuth()">开始TikTok授权</button>
+
+    <script>
+        // 替换为你的Client ID（关键！）
+        const CLIENT_ID = "awyom1tdeo492yg1";
+        // 固定回调URL，与TikTok后台设置一致
+        const REDIRECT_URI = "https://JialeChen03.github.io/callback.html";
+        // 授权范围（按你的需求调整，这里是基础权限）
+        const SCOPE = "user.info.basic,video.upload";
+
+        function startAuth() {
+            // 构建TikTok授权URL
+            const authUrl = `https://www.tiktok.com/oauth/authorize?client_key=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=${SCOPE}&response_type=code&state=random123`;
+            // 在当前窗口打开，方便展示地址栏变化
+            window.location.href = authUrl;
+        }
+    </script>
+</body>
+</html>
