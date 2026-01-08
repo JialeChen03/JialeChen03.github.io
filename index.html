@@ -2,31 +2,58 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>TikTok授权演示 - JialeChen03</title>
+    <title>已验证根域名 - 政策与授权演示</title>
     <style>
-        body { font-family: Arial; max-width: 800px; margin: 50px auto; text-align: center; }
-        button { padding: 15px 30px; font-size: 18px; background: #69C9D0; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        button:hover { background: #55BCC9; }
+        /* 基础样式，保证页面整洁 */
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        .policy-links { margin: 30px 0; }
+        /* 政策跳转按钮样式 */
+        .policy-btn { 
+            padding: 12px 25px; 
+            font-size: 16px; 
+            margin: 0 10px;
+            background: #2D8CF0; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            text-decoration: none;
+            display: inline-block;
+        }
+        .policy-btn:hover { background: #1C7ED6; }
+        /* 授权按钮样式 */
+        .auth-btn { 
+            padding: 15px 30px; 
+            font-size: 18px; 
+            background: #69C9D0; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            margin-top: 30px;
+        }
+        .auth-btn:hover { background: #55BCC9; }
     </style>
 </head>
 <body>
-    <h1>TikTok OAuth 2.0 授权演示</h1>
-    <p>点击下方按钮开始授权流程（演示用）</p>
-    <button onclick="startAuth()">开始TikTok授权</button>
+    <h1>已验证域名：jialechen03.github.io</h1>
+    
+    <!-- 核心：跳转到你已上传的独立政策文件 -->
+    <div class="policy-links">
+        <h3>政策文件（独立页面展示）</h3>
+        <!-- 跳转到term.html（服务条款） -->
+        <a href="https://jialechen03.github.io/terms.html" class="policy-btn" target="_blank">查看服务条款</a>
+        <!-- 跳转到privacy.html（隐私政策） -->
+        <a href="https://jialechen03.github.io/Privacy.html" class="policy-btn" target="_blank">查看隐私政策</a>
+    </div>
+
+    <!-- 保留授权演示按钮（用于视频录制） -->
+    <button class="auth-btn" onclick="startAuth()">开始TikTok授权演示</button>
 
     <script>
-        // 替换为你的Client ID（关键！）
-        const CLIENT_ID = "awyom1tdeo492yg1";
-        // 固定回调URL，与TikTok后台设置一致
-        const REDIRECT_URI = "https://JialeChen03.github.io/callback.html";
-        // 授权范围（按你的需求调整，这里是基础权限）
-        const SCOPE = "user.info.basic,video.upload";
-
+        // 授权演示跳转逻辑（跳仿授权页，避开真实TikTok接口）
         function startAuth() {
-            // 构建TikTok授权URL
-            const authUrl = "https://jialechen03.github.io/tiktok-oauth-demo.html";
-            // 在当前窗口打开，方便展示地址栏变化
-            window.location.href = authUrl;
+            window.location.href = "https://jialechen03.github.io/tiktok-oauth-demo.html";
         }
     </script>
 </body>
